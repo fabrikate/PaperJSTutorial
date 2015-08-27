@@ -1,0 +1,49 @@
+body {
+	background-color: #FBDCAE;
+	font-size: 18px;
+	font-family: sans-serif;
+}
+
+p {
+	font-size: 24px;
+}
+
+section {
+	background-color: #60A2BB;
+	width: 55%;
+	padding: 5px;
+	margin: 10px 10px;
+	border: solid 5px #EE5F44;
+	border-radius: 30px;
+
+}
+
+img {
+	width: 35%;
+	height: 35%;
+	border: solid 5px #EE5F44;
+	margin-right: 8px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	border-radius: 30px;
+}
+
+h2 {
+	background-color: #60A2BB;
+	font-size: 42px;
+	border: solid 5px #EE5F44;
+	width: 80%;
+	border-radius: 30px;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#gettingStarted, #drawing, #animation, #prosCons {
+	float: left;
+}
+
+#gsImg, #drawImg, #fsImg {
+	float: right;
+}
+

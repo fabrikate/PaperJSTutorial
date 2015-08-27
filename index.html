@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Paper.js | A newbie's Tutorial</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.24/paper-full.js'></script>
+	<script type="text/javascript" src="script.js"></script>
+	<script type='text/paperscript' canvas='myCanvas'>
+	var rectangle = new Path.Rectangle(new Point(10,10), 100);
+	rectangle.fillColor = 'tomato';
+	rectangle.position = view.center;
+	function onFrame(event) {
+		rectangle.rotate(3);
+	}
+	</script>
+	<script type='text/paperscript' canvas='girlCanvas'>
+		// draw a face
+	var face = new Path.Circle(new Point(250,150), 75);
+
+	var body = new Path();
+	body.add(new Point(100, 600));
+	body.add(new Point(250, 235));
+	body.add(new Point(400, 600));
+	body.closed = true;
+
+	var arm1 = new Path.Line(new Point(325, 400), new Point(400, 225));
+	var arm2 = new Path.Line(new Point(175,400), new Point(100, 225));
+
+	var leg1 = new Path.Line(new Point(240, 600), new Point(240,750));
+	var leg2 = new Path.Line(new Point(260, 600), new Point(260,750));
+
+	var person = new Group({
+	    children:[face, body, arm1, arm2, leg1, leg2],
+	    strokeColor: 'black',
+	    strokeWidth: 8
+	})
+	person.fillColor = 'tomato';
+
+	function onMouseDrag() {
+		person.rotate(10);
+	}
+
+	</script>
+</head>
+<body>
+	<header>
+		<h2>A newbie's tutorial to Paper.JS</h2>
+	</header>
+	<section id='gettingStarted'>
+		<p>Getting Started</p>
+		<ul id='getStartList'>
+		</ul>
+	</section>
+	<img id='gsImg' src='linking.png'>
+
+	<section id='drawing'>
+		<p>Drawing</p>
+		<ul id='drawingList'>
+		</ul>
+	<canvas id='girlCanvas' height='700px' width='500px'></canvas>
+	</section>
+	<img id='drawImg' src="drawing.png">
+
+	<section id='animation'>
+		<p>Animation</p>
+		<ul id='animationList'>
+		</ul>
+		<canvas id='myCanvas'></canvas>
+	</section>
+	<img id='fsImg' src="FullySelected.png">
+
+	<section id='prosCons'>
+		<p>Paper Script Pros and Cons</p>
+		<ul id='prosConsList'>
+		</ul>
+	</section>
+</body>
+</html>
